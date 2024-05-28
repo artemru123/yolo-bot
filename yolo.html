@@ -97,7 +97,7 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     function getid() {
-        document.getElementById('userid').innerText = "ID2: ";
+        document.getElementById('userid').innerText = "ID2: " + window.Telegram.WebApp.initDataUnsafe.user.username;
     }
 </script>
 </body>
