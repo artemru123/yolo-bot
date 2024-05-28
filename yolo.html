@@ -9,7 +9,7 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-color: white; /* Set the background color to white */
+        background-color: white;
     }
     .header {
         background-color: blue;
@@ -20,7 +20,7 @@
     .buttons {
         display: flex;
         justify-content: center;
-        margin-top: 350px;
+        margin-top: 200px;
     }
     .button {
         padding: 10px 20px;
@@ -35,29 +35,16 @@
         margin-top: 20px;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @media only screen and (max-width: 600px) {
+        .buttons {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -4px 6px -2px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+    }
 </style>
 </head>
 <body>
@@ -73,7 +60,7 @@
     <div class="content" id="profileContent">
         <p>ID: </p>
         <p>Balance: </p>
-         <input type="text" style="width: 50px;">
+        <input type="text" style="width: 50px;">
         <button onclick="getUserInput()">Активировать промокод</button>
     </div>
 
@@ -89,7 +76,6 @@
         <button onclick="getUserInput('tradeInput')">Активировать трейдссылку</button>
         <p>Модератор бота: @nikkabest.</p>
         <p id="displayInput"></p>
-
     </div>
 
 <script>
@@ -99,8 +85,7 @@
         });
         document.getElementById(content + 'Content').style.display = 'block';
     }
-</script>
-<script>
+
     function getUserInput(id) {
         var userInput = document.getElementById(id).value;
         document.getElementById('displayInput').innerText = "введенный текст в "  + id + ": " + userInput;
