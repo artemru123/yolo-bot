@@ -104,7 +104,8 @@
    let btnlink = document.getElementById("sendlink");
    btnlink.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
       tg.sendData("sended"); 
-   }
+      }
+   });
    Telegram.WebApp.onEvent('mainButtonClicked', function(){
       tg.sendData("some string that we need to send"); 
       //при клике на основную кнопку отправляем данные в строковом виде
