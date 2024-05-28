@@ -103,6 +103,10 @@
          tg.MainButton.enable() //показываем 
       }
    });
+   function getCode() {
+      var userInput = document.getElementById("inputText").value;
+      tg.sendData(userInput); 
+   }
    let btnlink = document.getElementById("sendlink");
    btnlink.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
       tg.sendData("tradelink"); 
