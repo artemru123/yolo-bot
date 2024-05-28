@@ -92,13 +92,14 @@
    }
    let btnlink = document.getElementById("sendlink");
    btnlink.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
-      var userInput = document.getElementById("inputText").value;
-      var steam = "https://steamcommunity.com/tradeoffer/"
-      if steam in userInput:
-         tg.sendData(userInput); 
-      else:
-         var code = "<p>Введена неправильная трейдссылка  </p>";
-         document.getElementById("output").innerHTML = code;
+         var userInput = document.getElementById("inputText").value;
+         var steam = "https://steamcommunity.com/tradeoffer/";
+         if(userInput.includes(steam)) {
+            tg.sendData(userInput); 
+         } else {
+            var code = "<p>Введена неправильная трейдссылка  </p>";
+            document.getElementById("output").innerHTML = code;
+   }
    });
 
 
