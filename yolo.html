@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
    <meta charset="UTF-8">
@@ -29,44 +28,6 @@
          background: var(--tg-theme-button-color);
          color: var(--tg-theme-button-text-color);
          border: none;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         
          font-size: 18px;
       }
 
@@ -96,7 +57,7 @@
    tg.expand(); //расширяем на все окно  
 
    tg.MainButton.text = "Changed Text"; //изменяем текст кнопки 
-   tg.MainButton.setText("${tg.user.id}"); //изменяем текст кнопки иначе
+   tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
    tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
    tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
    tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
@@ -131,34 +92,22 @@
 
 
    let usercard = document.getElementById("usercard"); //получаем блок usercard 
+
    let profName = document.createElement('p'); //создаем параграф
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+   profName.innerText = `${tg.initDataUnsafe.user.first_name}
+   ${tg.initDataUnsafe.user.last_name}
+   ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+   //выдем имя, "фамилию", через тире username и код языка
+   usercard.appendChild(profName); //добавляем 
 
    let userid = document.createElement('p'); //создаем еще параграф 
-   let tgdata    = window.Telegram.WebApp.initData; 
-   console.log(tgdata);
-   userid.innerText = `${tgdata}`; // Display the user's ID
+   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
    usercard.appendChild(userid); //добавляем
 
 
-
+   //работает только в attachment menu
+   // let pic = document.createElement('img'); //создаем img
+   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
+   // usercard.appendChild(pic); //добавляем элемент в карточку 
 </script>
 </html>
