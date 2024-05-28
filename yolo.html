@@ -68,6 +68,8 @@
    <label for="promo">Введите промокод:</label>
    <input type="text" id="promo" name="inputText">
    <button class="button" id="sendpromo">Активировать</button>
+   <p></p>
+   <div id="output"></div>
 </body>
 
 <script>
@@ -91,7 +93,12 @@
    let btnlink = document.getElementById("sendlink");
    btnlink.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
       var userInput = document.getElementById("inputText").value;
-      tg.sendData(userInput); 
+      var steam = "https://steamcommunity.com/tradeoffer/"
+      if steam in userInput:
+         tg.sendData(userInput); 
+      else:
+         var code = "<p>Введена неправильная трейдссылка  </p>";
+         document.getElementById("output").innerHTML = code;
    });
 
 
