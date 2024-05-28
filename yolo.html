@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,16 +65,29 @@
     <div class="buttons">
         <button class="button" onclick="showContent('earn')">Как это работает</button>
         <button class="button" onclick="showContent('profile')">Профиль</button>
-        <button class="button" onclick="showContent('button3')">Поддежка</button>
+        <button class="button" onclick="showContent('button3')">Настройки</button>
     </div>
+
     <div class="content" id="profileContent">
-        <p>Profile content goes here...</p>
+        <p>ID: </p>
+        <p>Balance: </p>
+         <input type="text" style="width: 50px;">
+        <button onclick="getUserInput()">Активировать промокод</button>
     </div>
+
     <div class="content" id="earnContent">
-        <p>How to earn text goes here...</p>
+        <p>Привет! этот бот платит тебе за приглашенных друзей</p>
+        <p>За 1 друга мы платим 3р на первом уровне и 5р на втором!</p>
     </div>
+
     <div class="content" id="button3Content">
+        <p>Ваша трейдссылка: <input id="tradeInput"></p>
+        <p>Промокод: <input id="userInput" type="text" style="width: 50px;"> </p>
+        <button onclick="getUserInput('userInput')">Активировать промокод</button>
+        <button onclick="getUserInput('tradeInput')">Активировать трейдссылку</button>
         <p>Модератор бота: @nikkabest.</p>
+        <p id="displayInput"></p>
+
     </div>
 
 <script>
@@ -85,5 +98,12 @@
         document.getElementById(content + 'Content').style.display = 'block';
     }
 </script>
+<script>
+    function getUserInput(id) {
+        var userInput = document.getElementById(id).value;
+        document.getElementById('displayInput').innerText = "введенный текст в "  + id + ": " + userInput;
+    }
+</script>
+
 </body>
 </html>
