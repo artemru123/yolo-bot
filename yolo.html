@@ -93,8 +93,9 @@
 
 
    let usercard = document.getElementById("usercard"); //получаем блок usercard 
-
+   let user = tg.getInitialUserInfo();
    let profName = document.createElement('p'); //создаем параграф
+   
    profName.innerText = `${tg.initDataUnsafe.user.first_name}
    ${tg.initDataUnsafe.user.last_name}
    ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
@@ -102,7 +103,7 @@
    usercard.appendChild(profName); //добавляем 
 
    let userid = document.createElement('p'); //создаем еще параграф 
-   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+   userid.innerText = `User ID: ${user.id}`; // Display the user's ID
    usercard.appendChild(userid); //добавляем
 
 
