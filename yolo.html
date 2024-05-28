@@ -102,13 +102,13 @@
    usercard.appendChild(profName); //добавляем 
 
    let userid = document.createElement('p'); //создаем еще параграф 
-   userid.innerText = `nikkabest`; //показываем user_id
+   userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
    usercard.appendChild(userid); //добавляем
 
 
    //работает только в attachment menu
-   // let pic = document.createElement('img'); //создаем img
-   // pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
-   // usercard.appendChild(pic); //добавляем элемент в карточку 
+   let pic = document.createElement('img'); //создаем img
+   pic.src = tg.initDataUnsafe.user.photo_url; //задаём src 
+   usercard.appendChild(pic); //добавляем элемент в карточку 
 </script>
 </html>
