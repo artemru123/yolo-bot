@@ -17,10 +17,9 @@
         padding: 10px 0;
     }
     .buttons {
-
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 200px;
     }
     .button {
         padding: 10px 20px;
@@ -29,54 +28,62 @@
         margin: 0 10px;
         cursor: pointer;
     }
+    .content {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 </head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
     <div class="header">
         <h1>CS2Yolo Bot</h1>
     </div>
     <div class="buttons">
-        <button class="button">Как это работает</button>
-        <button class="button">Профиль</button>
-        <button class="button">Button 3</button>
+        <button class="button" onclick="showContent('earn')">Как это работает</button>
+        <button class="button" onclick="showContent('profile')">Профиль</button>
+        <button class="button" onclick="showContent('button3')">Поддежка</button>
     </div>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <div class="content" id="profileContent">
+        <p>Profile content goes here...</p>
+    </div>
+    <div class="content" id="earnContent">
+        <p>How to earn text goes here...</p>
+    </div>
+    <div class="content" id="button3Content">
+        <p>Модератор бота: @nikkabest.</p>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script>
+    function showContent(content) {
+        document.querySelectorAll('.content').forEach(el => {
+            el.style.display = 'none';
+        });
+        document.getElementById(content + 'Content').style.display = 'block';
+    }
+</script>
 </body>
 </html>
