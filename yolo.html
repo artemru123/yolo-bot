@@ -95,24 +95,7 @@
          var userInput = document.getElementById("promo").value;
          tg.sendData(userInput); 
    });
-   const slices = document.querySelectorAll('.slice');
-   const prizes = ['Prize A', 'Prize B', 'Prize C']; // Define your prizes here
-   const chances = [0.3, 0.5, 0.2]; // Define corresponding chances (should sum to 1)
 
-   function spinWheel() {
-       const randomNum = Math.random();
-       let cumulative = 0;
-
-       for (let i = 0; i < prizes.length; i++) {
-           cumulative += chances[i];
-           if (randomNum < cumulative) {
-               alert('You won: ' + prizes[i]);
-               break;
-           }
-       }
-   }
-
-document.getElementById('wheel').addEventListener('click', spinWheel);
 
 
 
