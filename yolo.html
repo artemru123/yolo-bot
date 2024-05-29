@@ -76,7 +76,7 @@ body {
       tg.sendData(userInput); 
    }
    let btnlink = document.getElementById("sendlink");
-   btnlink.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+   btnlink.addEventListener('click', function(){ 
          var userInput = document.getElementById("inputText").value;
          var steam = "https://steamcommunity.com/tradeoffer/";
          if(userInput.includes(steam)) {
@@ -87,17 +87,21 @@ body {
    }
    });
    let btnpromo = document.getElementById("sendpromo");
-   btnpromo.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+   btnpromo.addEventListener('click', function(){ 
          var userInput = document.getElementById("promo").value;
          tg.sendData(userInput); 
+   });
+   let btnbonus = document.getElementById("bonus");
+   btnbonus.addEventListener('click', function(){ 
+         tg.sendData("bonus"); 
    });
 
 
 
 
-   let usercard = document.getElementById("usercard"); //получаем блок usercard 
+   let usercard = document.getElementById("usercard"); 
 
-   let profName = document.createElement('p'); //создаем параграф
+   let profName = document.createElement('p');
    profName.innerText = `
    ${tg.initDataUnsafe.user.username}`;
    usercard.appendChild(profName); //добавляем 
