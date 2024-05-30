@@ -11,7 +11,15 @@ body {
 }
 .text-field__input {
       display: block;
-    
+
+
+
+
+
+
+
+
+
       width: 30%;
       height: calc(2.25rem + 2px);
       padding: 0.375rem 0.75rem;
@@ -26,37 +34,56 @@ body {
       border-radius: 0.25rem;
       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .text-field__input2 {
       display: block;
-      width: 50%;
+      width: 60%;
       height: calc(2.25rem + 2px);
       padding: 0.375rem 0.75rem;
       font-family: inherit;
       font-size: 1rem;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
       font-weight: 400;
       line-height: 1.5;
       color: #212529;
@@ -66,6 +93,7 @@ body {
       border-radius: 0.25rem;
       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
+
 .hint {
     color: var(--tg-theme-hint-color);
 }
@@ -73,7 +101,27 @@ body {
 .link {
     color: var(--tg-theme-link-color);
 }
-
+.text-field__btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #28a745;
+  border: 1px solid #bdbdbd;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: background-color .15s ease-in-out;
+}
+.text-field__group {
+  display: flex;
+}
 .button {
     background-color: #28a745;
     color: white;
@@ -98,15 +146,52 @@ body {
    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
    </div>
    <p>Настройки</p>
-   <input class="text-field__input2" type="text" name="Трейдссылка" id="inputText" placeholder="Трейд ссылка">
    <p></p>
-   <button class="button" id="sendlink">Обновить трейдссылку</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="text-field__group">
+    <input class="text-field__input" type="text" id="inputText" name="Link" placeholder="Трейд ссылка">
+    <button class="text-field__btn" type="button", id="sendlink">Обновить трейдссылку</button>
+  </div>
    <p></p>
-   <input class="text-field__input" type="text" name="Промокод" id="promo" placeholder="Промокод">
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   <div class="text-field__group">
+    <input class="text-field__input" type="text" id="promo" name="Промо" placeholder="Промокод">
+    <button class="text-field__btn" type="button", id="sendpromo">Активировать</button>
+  </div>
+
+
    <p></p>
-   <button class="button" id="sendpromo">Активировать</button>
    <p></p>
-   <button class="button" id="bonus">Получить ежедневный бонус</button>
+   <button class="text-field__btn" type="button", id="bonus">Получить ежедневный бонус</button>
    <p></p>
    <div id="output"></div>
 </body>
@@ -129,6 +214,45 @@ body {
       var userInput = document.getElementById("inputText").value;
       tg.sendData(userInput);
    }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    let btnlink = document.getElementById("sendlink");
    btnlink.addEventListener('click', function(){
          var userInput = document.getElementById("inputText").value;
