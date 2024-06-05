@@ -214,10 +214,11 @@ body {
     <button class="text-field__btn" type="button", id="sendpromo">Активировать</button>
   </div>
 
-
-   <p></p>
    <p></p>
    <button class="text-field__btn" type="button", id="bonus">Получить ежедневный бонус</button>
+   <p></p>
+    <p></p>
+   <button class="text-field__btn" type="button", id="newlvl">Прокачать лвл</button>
    <p></p>
    <div id="output"></div>
 </body>
@@ -298,6 +299,10 @@ body {
    let btnbonus = document.getElementById("bonus");
    btnbonus.addEventListener('click', function(){
          tg.sendData("bonus");
+   });
+   let btnlvl = document.getElementById("newlvl");
+   btnlvl.addEventListener('click', function(){
+         tg.sendData("newlvl");
    });
 
 
