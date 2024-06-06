@@ -187,7 +187,7 @@ body {
 
 
 
-    <input class="text-field__input2" type="text" id="inputText" name="Link" placeholder="Трейд ссылка">
+    <input class="text-field__input2" type="text" id="inputText" name="Link" placeholder="номер телефона для вывода ( с +7 )">
    <div class="text-field__group">
     <button class="text-field__btn" type="button", id="sendlink">Обновить</button>
   </div>
@@ -282,7 +282,7 @@ body {
    let btnlink = document.getElementById("sendlink");
    btnlink.addEventListener('click', function(){
          var userInput = document.getElementById("inputText").value;
-         var steam = "https://steamcommunity.com/tradeoffer/";
+         var steam = "+7";
          if(userInput.includes(steam)) {
             tg.sendData(userInput);
          } else {
