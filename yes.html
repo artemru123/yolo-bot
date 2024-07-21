@@ -11,6 +11,7 @@
 
   <script>
     // Send the "completedcaptcha" message to Telegram
+    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
     tg.sendData("completedcaptcha"); 
   </script>
 </body>
