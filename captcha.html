@@ -1,56 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete the CAPTCHA</title>
+    <title>Форма с reCAPTCHA</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
-    <h1>COMPLETE THE CAPTCHA2</h1>
-        <form action="submit.php" method="post">
-        <div class="g-recaptcha" data-sitekey="6LceDhUqAAAAAFWelK1BIFjjX3w3NPtePcbG4wzF"></div>
-        <br>
-        <button onClick="verifyCaptcha()">Submit</button>
+
+    <h2>Контактная форма</h2>
+    <form id="contact-form" action="YOUR_SERVER_ENDPOINT" method="POST" onsubmit="return onFormSubmit()">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div><br>
+
+        <button type="submit">Отправить</button>
     </form>
-    function verifyCaptcha() {
-   var response = grecaptcha.getResponse();
-   if(response.length == 0) {
-       alert('Please complete the CAPTCHA');
-   } else {
-       // Your code to handle verification goes here
 
+    <script>
+        function onFormSubmit() {
+            const response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert("Пожалуйста, подтвердите, что вы не робот.");
+                return false;
+            }
+            // Здесь вы можете выполнить дополнительную логику, если необходимо
+            return true; // Если всё в порядке, форма отправляется
+        }
+    </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-   }
-}
 </body>
-</html
+</html>
