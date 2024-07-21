@@ -29,13 +29,11 @@
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       canvas.width = 100;
+      canvas.height = 30;
 
-
-
-
-
-
-
+      // Draw the captcha text on the canvas
+      ctx.font = '20px Arial';
+      ctx.fillText(captchaText, 10, 20);
 
 
 
@@ -54,14 +52,9 @@
 
 
       
-      canvas.height = 30;
-
-      // Draw the captcha text on the canvas
-      ctx.font = '20px Arial';
-      ctx.fillText(captchaText, 10, 20);
 
       // Convert the canvas to a data URL and display it in the image tag
-      captchaImage.innerHTML = <img src="${canvas.toDataURL()}" alt="Captcha">;
+      captchaImage.innerHTML = <img src="${canvas.toDataURL()}" alt="${captchaText}">;
     }
 
     // Check if the user input matches the captcha
