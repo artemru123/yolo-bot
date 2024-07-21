@@ -7,29 +7,31 @@
 
   <h1>Captcha</h1>
 
-  <p>Enter the number displayed in the box:</p>
+  <p>Enter the number displayed in the image:</p>
 
-  <div id="captcha-box"></div>
+  <div id="captcha-image"></div>
 
   <input type="text" id="captcha-input">
   <button onclick="checkCaptcha()">Verify</button>
 
   <script>
-    // Generate a random number between 10 and 99
+    // Generate a random 6-digit number
     function generateCaptcha() {
-      return Math.floor(Math.random() * 90) + 10;
+      return Math.floor(Math.random() * 900000) + 100000;
     }
 
-    // Display the generated number in the box
+    // Display the captcha as an image
     function displayCaptcha() {
-      const captchaBox = document.getElementById('captcha-box');
-      captchaBox.textContent = generateCaptcha();
-    }
+      const captchaImage = document.getElementById('captcha-image');
+      const captchaText = generateCaptcha();
 
-    // Check if the user input matches the captcha
-    function checkCaptcha() {
-      const captchaInput = document.getElementById('captcha-input').value;
-      const captchaBox = document.getElementById('captcha-box').textContent;
+      // Create a canvas element to draw the image
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 100;
+
+
+
 
 
 
@@ -52,7 +54,23 @@
 
 
       
-      if (captchaInput === captchaBox) {
+      canvas.height = 30;
+
+      // Draw the captcha text on the canvas
+      ctx.font = '20px Arial';
+      ctx.fillText(captchaText, 10, 20);
+
+      // Convert the canvas to a data URL and display it in the image tag
+      captchaImage.innerHTML = <img src="${canvas.toDataURL()}" alt="Captcha">;
+    }
+
+    // Check if the user input matches the captcha
+    function checkCaptcha() {
+      const captchaInput = document.getElementById('captcha-input').value;
+      const captchaImage = document.getElementById('captcha-image').querySelector('img');
+      const captchaText = captchaImage.alt;
+
+      if (captchaInput === captchaText) {
         window.location.href = "yes.html";
       } else {
         alert("Incorrect captcha!");
@@ -64,4 +82,4 @@
   </script>
 
 </body>
-</html
+</html>
