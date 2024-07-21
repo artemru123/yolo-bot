@@ -26,7 +26,15 @@
         <form action="submit.php" method="post">
         <div class="g-recaptcha" data-sitekey="6LceDhUqAAAAAFWelK1BIFjjX3w3NPtePcbG4wzF"></div>
         <br>
-        <input type="submit" value="Submit">
+        <button onClick="verifyCaptcha()">Submit</button>
     </form>
 </body>
+function verifyCaptcha() {
+   var response = grecaptcha.getResponse();
+   if(response.length == 0) {
+       alert('Please complete the CAPTCHA');
+   } else {
+       // Your code to handle verification goes here
+   }
+}
 </html
