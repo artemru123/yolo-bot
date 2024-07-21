@@ -2,39 +2,46 @@
 <html>
 <head>
   <title>Simple Captcha</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-  </style>
 </head>
 <body>
 
   <h1>Captcha</h1>
 
-  <p>Введите код с картинки</p>
+  <p>Enter the number displayed in the image:</p>
 
   <div id="captcha-image"></div>
 
   <input type="text" id="captcha-input" style="background-color: black; color: white;">
   <button onclick="checkCaptcha()" style="background-color: white; color: black;">Verify</button>
 
+  <p id="error-message" style="color: red; display: none;">Неправильная капча</p>
+
   <script>
-    // Generate a random 6-digit number
+    
     function generateCaptcha() {
       return Math.floor(Math.random() * 900000) + 100000;
     }
 
-    // Display the captcha as an image
+    
     function displayCaptcha() {
+      const captchaImage = document.getElementById('captcha-image');
+      const captchaText = generateCaptcha();
+
+      
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 100;
+      canvas.height = 30;
+
+   
+      ctx.fillStyle = 'black';
+
+
+
+
+
+
+
 
 
 
@@ -51,25 +58,14 @@
 
 
       
-      const captchaImage = document.getElementById('captcha-image');
-      const captchaText = generateCaptcha();
-
-      // Create a canvas element to draw the image
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = 100;
-      canvas.height = 30;
-
-      // Set background to black
-      ctx.fillStyle = 'black';
-      ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Set text color to white
       ctx.fillStyle = 'white';
       ctx.font = '20px Arial';
       ctx.fillText(captchaText, 10, 20);
 
-      // Add random lines to make it more difficult
+      
       for (let i = 0; i < 5; i++) {
         const x1 = Math.random() * canvas.width;
         const y1 = Math.random() * canvas.height;
@@ -83,11 +79,11 @@
         ctx.stroke();
       }
 
-      // Display the canvas as an image
-      captchaImage.innerHTML = ''; // Clear previous content
-      captchaImage.appendChild(canvas); // Add canvas to the div
+ 
+      captchaImage.innerHTML = ''; 
+      captchaImage.appendChild(canvas); 
 
-      // Store the captcha text for verification
+
       captchaImage.dataset.captchaText = captchaText;
     }
 
@@ -96,15 +92,19 @@
       const captchaInput = document.getElementById('captcha-input').value;
       const captchaImage = document.getElementById('captcha-image');
       const captchaText = captchaImage.dataset.captchaText;
+      const errorMessage = document.getElementById('error-message');
 
       if (captchaInput === captchaText) {
+
+
+
         window.location.href = "yes.html";
       } else {
-        alert("Incorrect captcha!");
+
+        errorMessage.style.display = 'block';
       }
     }
 
-    // Display the initial captcha on page load
     displayCaptcha();
   </script>
 
