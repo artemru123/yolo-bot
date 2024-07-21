@@ -1,10 +1,32 @@
-$secret = "6LceDhUqAAAAABV9Hbfp_IktcARnT_GDAcEEVKgu";
-$response = $_POST['g-recaptcha-response'];
-$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response");
-$captcha_success = json_decode($verify);
-if ($captcha_success->success == true) {
-    echo "Капча прошла успешно. Действие можно продолжать.";
-} else {
-    echo "Капча не прошла. Попробуйте еще раз.";
-}
+<?php
+  $recaptcha_secret = "YOUR_SECRET_KEY";
+
+  if(isset($_POST['g-recaptcha-response'])) {
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+    
+    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $recaptcha_data = [
+      'secret' => $recaptcha_secret,
+      'response' => $recaptcha_response
+    ];
+    
+    $recaptcha_options = [
+      'http' => [
+        'method' => 'POST',
+        'content' => http_build_query($recaptcha_data)
+      ]
+    ];
+    
+    $recaptcha_context = stream_context_create($recaptcha_options);
+    $recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
+    $recaptcha_result = json_decode($recaptcha_result);
+    
+    if($recaptcha_result->success) {
+      echo "reCAPTCHA verification successful!";
+    } else {
+      echo "reCAPTCHA verification failed!";
+    }
+  } else {
+    echo "reCAPTCHA verification failed!";
+  }
 ?>
