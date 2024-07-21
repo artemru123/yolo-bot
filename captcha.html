@@ -1,19 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAPTCHA Verification</title>
+  <title>Simple Captcha</title>
 </head>
 <body>
-  <h1>Welcome to the verification page!</h1>
-  
-  <form action="yes.html" method="GET">
-    <label for="captcha">Please enter the code displayed in the box:</label><br>
-    <input type="text" id="captcha" name="captcha">
-    <img src="https://dummyimage.com/100x50/333/fff&text=1234" alt="CAPTCHA Image">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+
+  <h1>Captcha</h1>
+
+  <p>Enter the number displayed in the box:</p>
+
+  <div id="captcha-box"></div>
+
+  <input type="text" id="captcha-input">
+  <button onclick="checkCaptcha()">Verify</button>
+
+  <script>
+    // Generate a random number between 10 and 99
+    function generateCaptcha() {
+      return Math.floor(Math.random() * 90) + 10;
+    }
+
+    // Display the generated number in the box
+    function displayCaptcha() {
+      const captchaBox = document.getElementById('captcha-box');
+      captchaBox.textContent = generateCaptcha();
+    }
+
+    // Check if the user input matches the captcha
+    function checkCaptcha() {
+      const captchaInput = document.getElementById('captcha-input').value;
+      const captchaBox = document.getElementById('captcha-box').textContent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      if (captchaInput === captchaBox) {
+        window.location.href = "yes.html";
+      } else {
+        alert("Incorrect captcha!");
+      }
+    }
+
+    // Display the initial captcha on page load
+    displayCaptcha();
+  </script>
+
 </body>
-</html>
+</html
