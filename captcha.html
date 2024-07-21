@@ -58,7 +58,7 @@
       outline: 2px solid white;
     }
     input[type="text"]:focus {
-       outline: 2px solid white; /* Set outline color to white */
+       outline: 2px solid white; 
     }
 
 
@@ -83,32 +83,30 @@
   <p id="error-message">Неправильная капча</p>
 
   <script>
-    // Generate a random 6-digit number
+
     function generateCaptcha() {
       return Math.floor(Math.random() * 900000) + 100000;
     }
 
-    // Display the captcha as an image
+
     function displayCaptcha() {
       const captchaImage = document.getElementById('captcha-image');
       const captchaText = generateCaptcha();
 
-      // Create a canvas element to draw the image
+
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       canvas.width = 100;
       canvas.height = 30;
 
-      // Set background to black
       ctx.fillStyle = 'black';
-      ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas
+      ctx.fillRect(0, 0, canvas.width, canvas.height); 
 
-      // Set text color to white
       ctx.fillStyle = 'white';
       ctx.font = '20px Arial';
       ctx.fillText(captchaText, 10, 20);
 
-      // Add random lines to make it more difficult
+    
       for (let i = 0; i < 5; i++) {
         const x1 = Math.random() * canvas.width;
         const y1 = Math.random() * canvas.height;
@@ -122,15 +120,15 @@
         ctx.stroke();
       }
 
-      // Display the canvas as an image
-      captchaImage.innerHTML = ''; // Clear previous content
-      captchaImage.appendChild(canvas); // Add canvas to the div
 
-      // Store the captcha text for verification
+      captchaImage.innerHTML = '';
+      captchaImage.appendChild(canvas);
+
+
       captchaImage.dataset.captchaText = captchaText;
     }
 
-    // Check if the user input matches the captcha
+
     function checkCaptcha() {
       const captchaInput = document.getElementById('captcha-input').value;
       const captchaImage = document.getElementById('captcha-image');
@@ -140,18 +138,31 @@
       if (captchaInput === captchaText) {
 
 
-        // Redirect to "yes.html" or whatever your success page is
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
         window.location.href = "yes.html";
       } else {
-        // Show the error message
+
         errorMessage.style.display = 'block';
       }
     }
-
-    // Display the initial captcha on page load
     displayCaptcha();
   </script>
 
 </body>
 </html>
-
