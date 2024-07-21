@@ -1,1 +1,48 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Captcha Completed</title>
+</head>
+<body>
+  <h1>Congratulations!</h1>
+  <p>You have successfully completed the captcha.</p>
+
+  <script>
+    // Replace with your actual Telegram bot API token
+    const botToken = 'YOUR_BOT_TOKEN'; 
+
+    // Function to send data to Telegram
+    function tgSendData(message) {
+      const url = https://api.telegram.org/bot${botToken}/sendMessage;
+      const data = {
+        chat_id: 'YOUR_CHAT_ID', // Replace with your chat ID
+        text: message
+      };
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Telegram message sent:', data);
+      })
+      .catch(error => {
+        console.error('Error sending message:', error);
+      });
+    }
+
+    // Send the message to Telegram
+    tgSendData("completedcaptcha");
+  </script>
+</body>
+</html>
