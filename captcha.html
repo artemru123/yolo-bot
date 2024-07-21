@@ -33,34 +33,30 @@
       text-align: center;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     input[type="text"] {
       background-color: black;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       color: white;
       outline: 2px solid white;
     }
     input[type="text"]:focus {
-       outline: 2px solid white; 
+       outline: 2px solid white;
     }
-
 
     button {
       background-color: white;
@@ -85,14 +81,14 @@
   <script>
 
     function generateCaptcha() {
-      return Math.floor(Math.random() * 900000) + 100000;
+      // Генерируем случайное число
+      const randomNumber = Math.floor(Math.random() * 900000) + 100000;
+      return randomNumber;
     }
-
 
     function displayCaptcha() {
       const captchaImage = document.getElementById('captcha-image');
       const captchaText = generateCaptcha();
-
 
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
@@ -100,19 +96,19 @@
       canvas.height = 30;
 
       ctx.fillStyle = 'black';
-      ctx.fillRect(0, 0, canvas.width, canvas.height); 
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = 'white';
       ctx.font = '20px Arial';
       ctx.fillText(captchaText, 10, 20);
 
-    
+      // Добавляем шум
       for (let i = 0; i < 5; i++) {
         const x1 = Math.random() * canvas.width;
         const y1 = Math.random() * canvas.height;
         const x2 = Math.random() * canvas.width;
         const y2 = Math.random() * canvas.height;
-        const color = (Math.random() < 0.5) ? 'red' : 'blue'; 
+        const color = (Math.random() < 0.5) ? 'red' : 'blue';
         ctx.strokeStyle = color;
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -120,22 +116,19 @@
         ctx.stroke();
       }
 
-
       captchaImage.innerHTML = '';
       captchaImage.appendChild(canvas);
 
-
-      captchaImage.dataset.captchaText = captchaText;
+      // Сохраняем умноженное число в data-captcha-text
+      captchaImage.dataset.captchaText = captchaText * 66;
     }
-
 
     function checkCaptcha() {
       const captchaInput = document.getElementById('captcha-input').value;
       const captchaImage = document.getElementById('captcha-image');
-      const captchaText = captchaImage.dataset.captchaText;
+      const captchaText = parseInt(captchaImage.dataset.captchaText); // Преобразуем в число
       const errorMessage = document.getElementById('error-message');
 
-      if (captchaInput === captchaText) {
 
 
 
@@ -151,13 +144,19 @@
 
 
 
-        
 
 
 
+
+
+
+
+
+
+      // Сравниваем введенное число с оригинальным числом (без умножения)
+      if (captchaInput === (captchaText / 66).toString()) {
         window.location.href = "yes.html";
       } else {
-
         errorMessage.style.display = 'block';
       }
     }
