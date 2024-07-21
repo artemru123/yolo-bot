@@ -2,6 +2,19 @@
 <html>
 <head>
   <title>Simple Captcha</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -11,8 +24,8 @@
 
   <div id="captcha-image"></div>
 
-  <input type="text" id="captcha-input">
-  <button onclick="checkCaptcha()">Verify</button>
+  <input type="text" id="captcha-input" style="background-color: black; color: white;">
+  <button onclick="checkCaptcha()" style="background-color: white; color: black;">Verify</button>
 
   <script>
     // Generate a random 6-digit number
@@ -22,25 +35,6 @@
 
     // Display the captcha as an image
     function displayCaptcha() {
-      const captchaImage = document.getElementById('captcha-image');
-      const captchaText = generateCaptcha();
-
-      // Create a canvas element to draw the image
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = 100;
-      canvas.height = 30;
-
-      // Set background to black
-      ctx.fillStyle = 'black';
-      ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas
-
-
-
-
-
-
-
 
 
 
@@ -57,6 +51,19 @@
 
 
       
+      const captchaImage = document.getElementById('captcha-image');
+      const captchaText = generateCaptcha();
+
+      // Create a canvas element to draw the image
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 100;
+      canvas.height = 30;
+
+      // Set background to black
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas
+
       // Set text color to white
       ctx.fillStyle = 'white';
       ctx.font = '20px Arial';
