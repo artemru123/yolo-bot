@@ -1,37 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма с reCAPTCHA</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reCAPTCHA v2 Example</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-
-    <h2>Контактная форма</h2>
-    <form action="submit.php" method="post">
-        <label for="name">Имя:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <div class="g-recaptcha" data-sitekey="6LceDhUqAAAAAFWelK1BIFjjX3w3NPtePcbG4wzF"></div><br>
-
-        <button type="submit">Отправить</button>
-    </form>
-
-    <script>
-        function onFormSubmit() {
-            const response = grecaptcha.getResponse();
-            if (response.length === 0) {
-                alert("Пожалуйста, подтвердите, что вы не робот.");
-                return false;
-            }
-            // Здесь вы можете выполнить дополнительную логику, если необходимо
-            return true; // Если всё в порядке, форма отправляется
-        }
-    </script>
-
+  <h1>reCAPTCHA v2 Example</h1>
+  
+  <form action="submit.php" method="post">
+    <div class="g-recaptcha" data-sitekey="6LceDhUqAAAAAFWelK1BIFjjX3w3NPtePcbG4wzF"></div>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
