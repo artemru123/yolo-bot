@@ -51,17 +51,45 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
       
 
-      // Convert the canvas to a data URL and display it in the image tag
-      captchaImage.innerHTML = <img src="${canvas.toDataURL()}" alt="${captchaText}">;
+      // Add random lines to make it more difficult
+      for (let i = 0; i < 5; i++) {
+        const x1 = Math.random() * canvas.width;
+        const y1 = Math.random() * canvas.height;
+        const x2 = Math.random() * canvas.width;
+        const y2 = Math.random() * canvas.height;
+        const color = (Math.random() < 0.5) ? 'red' : 'blue'; 
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+      }
+
+      // Display the canvas as an image
+      captchaImage.innerHTML = ''; // Clear previous content
+      captchaImage.appendChild(canvas); // Add canvas to the div
+
+      // Store the captcha text for verification
+      captchaImage.dataset.captchaText = captchaText;
     }
 
     // Check if the user input matches the captcha
     function checkCaptcha() {
       const captchaInput = document.getElementById('captcha-input').value;
-      const captchaImage = document.getElementById('captcha-image').querySelector('img');
-      const captchaText = captchaImage.alt;
+      const captchaImage = document.getElementById('captcha-image');
+      const captchaText = captchaImage.dataset.captchaText;
 
       if (captchaInput === captchaText) {
         window.location.href = "yes.html";
