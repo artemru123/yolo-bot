@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yolo Captcha</title>
 
-  <!-- Подключение шрифта Google для поддержки кириллицы -->
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -96,7 +96,7 @@
         .then(blob => {
           const img = document.createElement('img');
           img.src = URL.createObjectURL(blob);
-          captchaImage.innerHTML = ''; // Очистка предыдущей капчи
+          captchaImage.innerHTML = ''; 
           captchaImage.appendChild(img);
         });
     }
@@ -117,7 +117,7 @@
 
 
           if (data === 'success') {
-            window.location.href = "yes.html"; // Перенаправление на yes.html
+            window.location.href = "yes.html";  
           } else {
             errorMessage.style.display = 'block';
           }
