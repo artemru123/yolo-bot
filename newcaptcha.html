@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yolo Captcha</title>
+
+  <!-- Подключение шрифта Google для поддержки кириллицы -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #captcha-image {
+      margin-bottom: 20px;
+    }
+
+    #error-message {
+      color: red;
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"], button {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      background-color: black;
+      color: white;
+      outline: 2px solid white;
+    }
+    input[type="text"]:focus {
+       outline: 2px solid white;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Проверка на робота</h1>
+
+  <p>Введите число с картинки</p>
+  <p>  если картинки нет, пожалуйста сообщите об этом @nikkabest </p>
+  <div id="captcha-image"></div>
+
+  <input type="text" id="captcha-input">
+  <button onclick="checkCaptcha()">Проверить</button>
+
+  <p id="error-message">Неправильная капча</p>
+
+  <script>
+    let currentCaptcha = null;
+
+    function displayCaptcha() {
+      fetch("http://127.0.0.1:5000/captcha")
+        .then(response => response.json())
+        .then(data => {
+          currentCaptcha = data.captcha;
+          const captchaImage = document.getElementById('captcha-image');
+          const captchaText = data.captcha;
+
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = 150;
+          canvas.height = 60;
+
+          // Отрисовка фона
+          ctx.fillStyle = 'black';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // Отрисовка текста
+          ctx.fillStyle = 'white';
+          ctx.font = '20px Arial';
+          const textWidth = ctx.measureText(captchaText).width;
+          const offsetX = Math.random() * (canvas.width - textWidth) / 2;
+          const offsetY = Math.random() * (canvas.height - 20) / 2;
+          ctx.fillText(captchaText, offsetX, offsetY + 20);
+
+          // Отрисовка линий
+          for (let i = 0; i < 10; i++) {
+            const x1 = Math.random() * canvas.width;
+            const y1 = Math.random() * canvas.height;
+            const x2 = Math.random() * canvas.width;
+            const y2 = Math.random() * canvas.height;
+            const color = (Math.random() < 0.5) ? 'red' : 'blue';
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+          }
+
+          captchaImage.innerHTML = '';
+          captchaImage.appendChild(canvas);
+        });
+    }
+
+    function checkCaptcha() {
+      const captchaInput = document.getElementById('captcha-input').value;
+      const errorMessage = document.getElementById('error-message');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      fetch("http://127.0.0.1:5000/captcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "captcha=" + captchaInput
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error("Ошибка запроса");
+        }
+      })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .then(data => {
+        if (data === 'success') {
+          window.location.href = "yes.html";
+        } else {
+          errorMessage.style.display = 'block';
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        errorMessage.style.display = 'block';
+      });
+    }
+
+    displayCaptcha();
+
+  </script>
+
+</body>
+</html>
