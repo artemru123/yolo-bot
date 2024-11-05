@@ -1,0 +1,367 @@
+<html>
+<script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+<style>
+  
+body {
+    color: var(--tg-theme-text-color);
+  
+    background: var(--tg-theme-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+.text-field__input {
+      display: block;
+
+
+
+      width: 30%;
+      height: calc(2.25rem + 2px);
+      padding: 0.375rem 0.75rem;
+      font-family: inherit;
+      font-size: 1rem;
+  
+      font-weight: 400;
+      line-height: 1.5;
+  
+      color: #212529;
+      background-color: #fff;
+      background-clip: padding-box;
+  
+      border: 1px solid #bdbdbd;
+      border-radius: 0.25rem;
+  
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.text-field__input2 {
+      display: block;
+      width: 60%;
+      height: calc(2.25rem + 2px);
+      padding: 0.375rem 0.75rem;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #bdbdbd;
+      border-radius: 0.25rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+.hint {
+    color: var(--tg-theme-hint-color);
+}
+
+.link {
+    color: var(--tg-theme-link-color);
+}
+.text-field__btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #28a745;
+  border: none;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  transition: background-color .15s ease-in-out;
+}
+.text-field__group {
+  display: center;
+}
+.button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.text-field__input:focus {
+      color: #212529;
+      background-color: #fff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      border-color: #bdbdbd;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    }
+.text-field__input2:focus {
+      color: #212529;
+      background-color: #fff;
+      border-color: #bdbdbd;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    }
+.button:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+#usercard {
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+   <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
+   </div>
+   <p>Настройки</p>
+   <p></p>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+   <p></p>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    <input class="text-field__input" type="text" id="promo" name="Промо" placeholder="Промокод">
+   <div class="text-field__group">
+    <button class="text-field__btn" type="button", id="sendpromo">Активировать</button>
+  </div>
+
+   <p></p>
+   <button class="text-field__btn" type="button", id="bonus">Получить ежедневный бонус</button>
+   <p></p>
+   <button class="text-field__btn" type="button", id="newlvl">Прокачать лвл</button>
+   <p></p>
+   <div id="output"></div>
+</body>
+
+<script>
+   let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
+
+   tg.expand(); //расширяем на все окно
+
+   tg.MainButton.text = "Changed Text"; //изменяем текст кнопки
+   tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+   tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+   tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+   tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры
+
+
+
+
+   function getCode() {
+      var userInput = document.getElementById("inputText").value;
+      tg.sendData(userInput);
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   let btnlink = document.getElementById("sendlink");
+   btnlink.addEventListener('click', function(){
+         var userInput = document.getElementById("inputText").value;
+         var steam = "https://steamcommunity.com/tradeoffer/";
+         if(userInput.includes(steam)) {
+            tg.sendData(userInput);
+         } else {
+            var code = "<p>Введена неправильная трейдссылка  </p>";
+            document.getElementById("output").innerHTML = code;
+   }
+   });
+   let btnpromo = document.getElementById("sendpromo");
+   btnpromo.addEventListener('click', function(){
+         var userInput = document.getElementById("promo").value;
+         tg.sendData(userInput);
+   });
+   let btnbonus = document.getElementById("bonus");
+   btnbonus.addEventListener('click', function(){
+         tg.sendData("bonus");
+   });
+   let btnlvl = document.getElementById("newlvl");
+   btnlvl.addEventListener('click', function(){
+         tg.sendData("newlvl");
+   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+   let usercard = document.getElementById("usercard");
+
+   let profName = document.createElement('p');
+   profName.innerText = `
+   ${tg.initDataUnsafe.user.username}`;
+   usercard.appendChild(profName); //добавляем
+
+   let userid = document.createElement('p'); //создаем еще параграф
+   userid.innerText = `ID: ${tg.initDataUnsafe.user.id}`; //показываем user_id
+   usercard.appendChild(userid); //добавляем
+
+</script>
+</html>
