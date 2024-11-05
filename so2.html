@@ -278,17 +278,7 @@ body {
    
    
    
-   let btnlink = document.getElementById("sendlink");
-   btnlink.addEventListener('click', function(){
-         var userInput = document.getElementById("inputText").value;
-         var steam = "https://steamcommunity.com/tradeoffer/";
-         if(userInput.includes(steam)) {
-            tg.sendData(userInput);
-         } else {
-            var code = "<p>Введена неправильная трейдссылка  </p>";
-            document.getElementById("output").innerHTML = code;
-   }
-   });
+   
    let btnpromo = document.getElementById("sendpromo");
    btnpromo.addEventListener('click', function(){
          var userInput = document.getElementById("promo").value;
