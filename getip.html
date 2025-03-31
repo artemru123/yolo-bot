@@ -9,6 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 
   <style>
+      @font-face {
+            font-family: 'bull';
+            src: url('bull.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
     body {
       background-color: black;
       color: white;
@@ -18,7 +24,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      margin: 0;
+      margin: 0;font-family: 'bull';
     }
 
     #captcha-image {
@@ -69,8 +75,9 @@
 
     button {
       background-color: white;
+        
       color: black;
-      cursor: pointer;
+      cursor: pointer; font-family: 'bull';
     }
   </style>
 </head>
@@ -119,34 +126,30 @@ let ip; // Объявляем переменную для хранения IP-а
             // Получение идентификатора пользователя
             const result = await fp.get();
 
-            // Получение информации о пользователе
-            const visitorId = result.visitorId; 
-
-
+            const visitorId = result.visitorId; console.log(visitorId)
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            
             const combinedString = visitorId + timezone;
             const info = CryptoJS.MD5(combinedString).toString();
             
             displayInfo = {
                 info: info,
             };
-            
-            console.log(displayInfo)
+
+
+
+
+
+
+
+
+
+
+
+
             
         })();
-    </script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    </script>  
 </body>
+    
 </html>
