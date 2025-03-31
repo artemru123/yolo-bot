@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FingerprintJS with MD5 and Timezone</title>
+    <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@latest/dist/fp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+</head>
+<body>
+    <h1>Информация о пользователе (с хэшированием MD5 и временной зоной)</h1>
+    <pre id="user-info"></pre>
+
+    <script>
+        (async () => {
+            // Инициализация FingerprintJS
+            const fp = await FingerprintJS.load();
+
+            // Получение идентификатора пользователя
+            const result = await fp.get();
+
+            // Получение информации о пользователе
+            const visitorId = result.visitorId;
+
+
+            // Получение временной зоны
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            // Объединение visitorId и временной зоны
+            const combinedString = visitorId + timezone;
+
+            // Хэширование объединенной строки
+            const hashedVisitorIdWithTimezone = CryptoJS.MD5(combinedString).toString();
+
+
+            // Отображение хэшированной информации на странице
+            const displayInfo = {
+                hashedVisitorIdWithTimezone: hashedVisitorIdWithTimezone,
+
+            };
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            document.getElementById('user-info').textContent = JSON.stringify(displayInfo, null, 2);
+        })();
+        
+    </script>
+</body>
+</html>
