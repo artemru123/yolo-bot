@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head><meta charset="utf-8">
+    
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@latest/dist/fp.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://telegram.org/js/telegram-web-app.js"></script>
   <title>Yolo Captcha</title>
 
-  <!-- Подключение шрифта Google для поддержки кириллицы -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 
   <style>
     body {
@@ -79,12 +78,12 @@
 
   <h1>Проверка на робота</h1>
 
-  <p>Нажмите на кнопку "Проверить" </p><p>для того чтобы воспользоваться ботом</p></p>
+  <p>Нажмите на кнопку <b>Проверить</b> </p><p>для того чтобы воспользоваться ботом</p>
   <div id="captcha-image"></div>
 
   <button onclick="checkCaptcha()">Проверить</button>
   <p id="error-message">Неправильная капча</p>
-  <script>
+  <script> 
       
 let ip; // Объявляем переменную для хранения IP-адреса
         fetch('https://api.ipify.org?format=json')
@@ -103,8 +102,44 @@ let ip; // Объявляем переменную для хранения IP-а
     function checkCaptcha() {
         
         let tg = window.Telegram.WebApp;
-        tg.sendData("completedcaptcha_" + ip); 
+        tg.sendData("completedcaptcha_" + displayInfo.info + "_" + CryptoJS.MD5(ip).toString());
     }</script>
+    
+    
+    
+    
+    
+    
+    <script>
+        let displayInfo
+        (async () => {
+            
+            const fp = await FingerprintJS.load();
+
+            // Получение идентификатора пользователя
+            const result = await fp.get();
+
+            // Получение информации о пользователе
+            const visitorId = result.visitorId; console.log(visitorId)
+
+
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const combinedString = visitorId + timezone;
+            const info = CryptoJS.MD5(combinedString).toString();
+            
+            displayInfo = {
+                info: info,
+            };
+            
+            console.log(displayInfo)
+            
+        })();
+    </script>
+    
+    
+    
+    
+    
     
     
     
