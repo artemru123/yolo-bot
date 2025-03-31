@@ -126,7 +126,7 @@ let ip; // Объявляем переменную для хранения IP-а
             // Получение идентификатора пользователя
             const result = await fp.get();
 
-            const visitorId = result.visitorId; console.log(visitorId)
+            const visitorId = result.visitorId;
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             
             const combinedString = visitorId + timezone;
