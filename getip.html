@@ -112,7 +112,7 @@ let ip;
   </script>
 <script>
     function checkCaptcha() {
-        console.log(indexcaptcha);if (indexcaptcha == 0 || indexcaptcha == 11 + 1) {
+       if (indexcaptcha == 0 || indexcaptcha == 11 + 1) {
         let tg = window.Telegram.WebApp;
         tg.sendData("completedcaptcha_" + displayInfo.info + "_" + CryptoJS.MD5(ip).toString());
             
