@@ -70,8 +70,7 @@
       outline: 2px solid gray;
     }
     input[type="text"]:focus {
-       outline: 2px solid white;
-    }
+        outline: 2px solid white;} .buttonblack{background-color: black;border: 1px white solid;color: white;cursor: pointer; font-family: 'bull'; transition: box-shadow 0.3s ease;}}button:hover {box-shadow: 0 0 20px rgba(256, 256, 256, 5);}.containertext{display: flex; flex-direction: row;align-items: center; } 
 
     button {
       background-color: white;
@@ -90,6 +89,10 @@
 
   <p>Нажмите на кнопку <b>Проверить</b> </p><p>для того чтобы воспользоваться ботом</p>
   <div id="captcha-image"></div>
+    <div class='containertext'>
+        <button class="buttonblack" onclick="setindex(0)">&rarr;</button> <img id="captchapng"src='captcha.webp' style="width: 50px;rotate: 0deg;"> <button class="buttonblack"onclick="setindex(1)">&larr;</button> 
+    
+    </div>
   <button onclick="checkCaptcha()">Проверить</button> 
     
   <p id="error-message">Неправильная капча</p>
@@ -109,11 +112,11 @@ let ip;
   </script>
 <script>
     function checkCaptcha() {
-        
-        
+        console.log(indexcaptcha);if (indexcaptcha == 0 || indexcaptcha == 11 + 1) {
         let tg = window.Telegram.WebApp;
         tg.sendData("completedcaptcha_" + displayInfo.info + "_" + CryptoJS.MD5(ip).toString());
-    }</script>
+            
+    }else{document.getElementById('error-message').style.display = 'flex'}}</script>
     
     
     
@@ -149,7 +152,24 @@ let ip;
             
                     
         })();
-    </script>  
+    </script>  <script>let pos;let indexcaptcha; pos = Math.floor(Math.random() * 5) + 1;indexcaptcha = pos; document.getElementById('captchapng').style.transform = `rotate(${pos * 30}deg)`;</script>
+    <script>
+    function setindex(info) {
+        
+        
+        if (info == 0) {
+            if (indexcaptcha >> 0 && indexcaptcha <= 11) {
+                indexcaptcha = indexcaptcha - 1
+        }}else{
+            
+            if (indexcaptcha >> 0 && indexcaptcha <= 11) {
+            indexcaptcha = indexcaptcha + 1
+        }}
+        
+        document.getElementById('captchapng').style.transform = `rotate(${indexcaptcha * 30}deg)`;
+    }
+    
+    </script>
 </body>
     
 </html>
