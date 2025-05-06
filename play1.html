@@ -1,0 +1,166 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><script src='script.js'></script>
+    
+    <style>
+        body {
+            margin: 0;
+            
+            height: 100vh;
+            font-family: 'cho';
+            background-color: white;overflow: hidden;
+            
+            
+            
+            
+            
+            
+            
+            
+        }@font-face{font-family: 'cho';src: url('style.otf')}
+        .downpoloska {
+            position: fixed; 
+            bottom: 0;left: 50%;   
+            
+            transform: translateX(-50%);
+            width: 100%; max-width: 500px;
+            height: 100px; overflow-y: hidden;
+            
+            background: rgba(256, 256, 256, 0.9);
+            display: flex;
+            
+            align-items: center;
+            text-align: center;
+            
+            border-radius: 10px;
+            justify-content: center; 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        .containerlowpanel {
+            display: flex;
+            
+            flex-direction: row; 
+            margin: 0px;
+            min-width: 90%;
+            
+            min-height: 90%; background: rgba(100, 100, 100, 0.1);border-radius: 20px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .buttonclass {
+            color: black;
+            cursor: pointer;
+            
+            
+            
+            
+            
+            
+            user-select: none;
+            background-color: transparent; /*#1d79db*/
+            flex: 1; 
+            margin: 0px; 
+            
+            font-size: 14px;
+            text-align: center;
+            
+            
+            border-radius: 10px;display: flex;flex-direction: column;align-content: center;align-items: center;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }.logopanel{max-width: 70%;border-radius: 20px}.choisedpage{color: black; cursor: pointer; background-color: #0590ed; flex: 1; margin: 0px; font-size: 15px; text-align: center; border-radius: 10px; display: flex; flex-direction: column; align-content: center; align-items: center} /*background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%)*/
+        .contentcontainer{
+            bottom: 0;
+        left: 0; 
+        margin: 0px;
+        width: 100%; 
+        height: 90vh;
+        overflow-y: hidden;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        }.contentcontainer1
+        {bottom: 0;
+            left: 0; margin: 10px;margin-top: 20px;max-width: 700px;
+            
+            width: 100%; 
+            height: 90%;gap: 2%;
+            overflow-y: hidden;
+            background: rgba(256, 256, 256, 0.9);
+            display: flex;
+            
+            ;text-align: center;
+            justify-content: flex-start; flex-direction: column; 
+           
+        }.bannerbalance{background: linear-gradient(to right, #0575e6, #021b79);display: flex; color: white;padding: 1px; border-radius: 10px; height: 50px; width: 100px; justify-content: center; align-content: center;align-items: center; text-align: center}.games{font-size: 20; margin-top 10px; text-align: start}.games-wrapper{margin-top 5px; overflow-y: scroll; width: 100%}.games-container{display: flex; gap: 30px; width: max-content}.games-item{background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);align-items: start; border-radius: 10px; display: flex; height: 90px;text-align: start; justify-content: center; overflow: hidden; padding: 5px; position: relative; width: max-content;background-size:200% 200%; animation: gradientcolor 6s linear infinite;}.games-title{color: white; font-size: 50px; line-height: 50px;margin-right: 160px}.games-img{left: 50%; position: absolute; top: 70%; transform: translate(-50%, -50%); width: 0px}.buttonclass svg {width: 30px; height: 30px; margin-top: 20%}.textdown{text-align: end}@keyframes gradientcolor { 0% {background-position: 0% 50%} 50%{background-position: 100% 50%;}100% {background-position: 0% 50%}}.bannerbonus{background: linear-gradient(to right, #8e2de2, #4a00e0);border-radius: 20px;min-height: 30px;display: flex;flex-direction: column;}.buttonbonus{color: black;background: white; border-radius: 20px;height: 20px;padding: 3px }.bonuscontainer{display: flex;flex-direction: row;text-align: start;padding: 20px;box-sizing: border-box; color: black;justify-content: space-between; border-radius: 20px}.bannerquests{background: linear-gradient(to right, #36d1dc, #5b86e5);border-radius: 20px;min-height: 30px;display: flex;flex-direction: column;}.buttoncontainer1{display: flex;flex-direction: column;}.totalquestscontainer{height: 500px; width: 100%; overflow-y: scroll;gap: 20px; display: flex; flex-direction: column}.game-img1{bottom: 0; height: 79px;position: absolute;right: 0}.gamecontainer{display: grid;grid-template-columns: repeat(5, 70px);grid-template-rows: repeat(5, 70px); width: max-content;height: max-content; overflow: hidden; gap: 2px}.yacheyka{color: white; text-align: center;font-size: 53px;border-radius: 10px;width: 70px; height: 70px; background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);background-size:200% 200%; animation: gradientcolor 2s linear infinite;}.centralcontainer{display: flex; justify-content: center; align-content: center; align-items: center} .clickedcorrectly {background: linear-gradient(to right, #348f50, #56b4d3);background-size:200% 200%; animation: gradientcolor 2s linear infinite;}.clickednotcorrectly {background: linear-gradient(to right, #eb3349, #f45c43);background-size:200% 200%; animation: gradientcolor 3s linear infinite;}.startgame{width: 90%; background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);background-size:200% 200%; animation: gradientcolor 2s linear infinite; border-radius: 30px; height: 30px; color: white; text-align: center; display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: center}.transitiondisable {animation: transitions 1.2s linear}@keyframes transitions {0%{opacity: 1; scale: 1} 50%{opacity: 0; scale: 0.7} 100%{opacity: 1; scale: 1}}.transitionenable1 {animation: transitions1 0.6s linear}@keyframes transitions1 {from{opacity: 0; scale: 0.7} to{opacity: 1; scale: 1}}.disabled {opacity: 0.5}
+        
+    </style>
+</head>
+
+<body>
+    <div class="downpoloska">
+        
+        <div class="containerlowpanel">
+            <div class='choisedpage'><img class='logopanel' src=logo.jpg>Главная</div>
+            <div class='buttonclass'><svg  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.94095 0.31952C5.36314 -0.106507 6.04764 -0.106507 6.46983 0.31952C6.89202 0.745546 6.89202 1.43627 6.46983 1.8623L3.76713 4.58957C3.34494 5.0156 2.66044 5.0156 2.23825 4.58957L0.616629 2.95321C0.194441 2.52718 0.194441 1.83646 0.616629 1.41043C1.03882 0.984403 1.72332 0.984403 2.14551 1.41043L3.00269 2.2754L4.94095 0.31952ZM8.4081 2.72727C8.4081 2.12478 8.89211 1.63636 9.48918 1.63636H19.2189C19.816 1.63636 20.3 2.12478 20.3 2.72727C20.3 3.32977 19.816 3.81818 19.2189 3.81818H9.48918C8.89211 3.81818 8.4081 3.32977 8.4081 2.72727ZM6.46983 6.86497C6.89202 7.291 6.89202 7.98173 6.46983 8.40775L3.76713 11.135C3.34494 11.5611 2.66044 11.5611 2.23825 11.135L0.616629 9.49866C0.194441 9.07264 0.194441 8.38191 0.616629 7.95588C1.03882 7.52986 1.72332 7.52986 2.14551 7.95588L3.00269 8.82086L4.94095 6.86497C5.36314 6.43895 6.04764 6.43895 6.46983 6.86497ZM8.4081 9.27273C8.4081 8.67023 8.89211 8.18182 9.48918 8.18182H19.2189C19.816 8.18182 20.3 8.67023 20.3 9.27273C20.3 9.87522 19.816 10.3636 19.2189 10.3636H9.48918C8.89211 10.3636 8.4081 9.87522 8.4081 9.27273ZM6.46983 13.4104C6.89202 13.8365 6.89202 14.5272 6.46983 14.9532L3.76713 17.6805C3.34494 18.1065 2.66044 18.1065 2.23825 17.6805L0.616629 16.0441C0.194441 15.6181 0.194441 14.9274 0.616629 14.5013C1.03882 14.0753 1.72332 14.0753 2.14551 14.5013L3.00269 15.3663L4.94095 13.4104C5.36314 12.9844 6.04764 12.9844 6.46983 13.4104ZM8.4081 15.8182C8.4081 15.2157 8.89211 14.7273 9.48918 14.7273H19.2189C19.816 14.7273 20.3 15.2157 20.3 15.8182C20.3 16.4207 19.816 16.9091 19.2189 16.9091H9.48918C8.89211 16.9091 8.4081 16.4207 8.4081 15.8182Z" fill="#3180FF"/></svg><span class='textdown'>Задания</span></div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class='buttonclass'><img class='logopanel' src=logo.jpg>Играть</div>
+            <div class='buttonclass'><img class='logopanel' src=logo.jpg>Рейтинг</div>
+            <div class='buttonclass'><img class='logopanel' src=logo.jpg>Приглашай</div>
+            
+        </div></div>
+<div class='contentcontainer'>
+    <div class='contentcontainer1'>    
+        <div class='bonuscontainer'><span style='text-align: start; font-size: 25px'>Mines</span> <div class='bannerbalance'><span style='text-align: center; font-size: 20px'>100 coin</span></div></div>
+        
+        <div class='centralcontainer'><div class='gamecontainer'><div class='yacheyka' onclick='startgame(1)'>?</div><div class='yacheyka' onclick='startgame(2)'>?</div><div class='yacheyka' onclick='startgame(3)'>?</div><div class='yacheyka' onclick='startgame(4)'>?</div><div class='yacheyka' onclick='startgame(5)'>?</div><div class='yacheyka' onclick='startgame(6)'>?</div><div class='yacheyka' onclick='startgame(7)'>?</div><div class='yacheyka' onclick='startgame(8)'>?</div><div class='yacheyka' onclick='startgame(9)'>?</div><div class='yacheyka' onclick='startgame(10)'>?</div><div class='yacheyka' onclick='startgame(11)'>?</div><div class='yacheyka' onclick='startgame(12)'>?</div><div class='yacheyka' onclick='startgame(13)'>?</div><div class='yacheyka' onclick='startgame(14)'>?</div><div class='yacheyka' onclick='startgame(15)'>?</div><div class='yacheyka' onclick='startgame(16)'>?</div><div class='yacheyka' onclick='startgame(17)'>?</div><div class='yacheyka' onclick='startgame(18)'>?</div><div class='yacheyka' onclick='startgame(19)'>?</div><div class='yacheyka' onclick='startgame(20)'>?</div><div class='yacheyka' onclick='startgame(21)'>?</div><div class='yacheyka' onclick='startgame(22)'>?</div><div class='yacheyka' onclick='startgame(23)'>?</div><div class='yacheyka' onclick='startgame(24)'>?</div><div class='yacheyka' onclick='startgame(25)'>?</div></div></div><div class='centralcontainer'> <div class='startgame'><span style='text-align: center' id='gamesstatus'>Ожидание...</span> </div></div><div class='centralcontainer'><div class='startgame' style='height: 50px; align-content: flex-start; justify-content: space-between; padding: 5px'><div><span style='font-size: 20px'>Количество мин:</span><span style='font-size: 20px; margin-left: 2%' id='countmines'>3</span></div><div style='display: flex; align-items: center; gap: 5px; margin: 10px'><span class='clickedcorrectly' style='height: 50px; width: 50px; border-radius: 10px; justify-content: center; align-content: center; font-size: 30px' onclick='changebombcount("1")' id='plus1button'>+</span><span class='clickednotcorrectly disabled' style='height: 50px; width: 50px; border-radius: 10px; text-align: center; align-content: center; justify-content: center; font-size: 30px;' onclick='changebombcount("0")' id='minusbutton'>-</span> </div></div></div>
+    </div></div></body>
