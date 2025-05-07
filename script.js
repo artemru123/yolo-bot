@@ -1,13 +1,13 @@
 var countmines = 3;function changepage() {
     console.log('clicked')
-}; var currentx = 0.2; var bombpos; var games1 = false;
+}; var currentx = 0.2; var bombpos; var games1 = false;let isGameActive = false;
 
 function openyacheika(index) {
-      console.log(bombpos);document.getElementById('game_play1sstatus').innerText = 'Удачи! x' + parseFloat((1 * (currentx * (countmines - 2))).toFixed(1)); currentx += 0.3; games1 = true;
+      if (!isGameActive) return;console.log(bombpos);document.getElementById('game_play1sstatus').innerText = 'Удачи! x' + parseFloat((1 * (currentx * (countmines - 2))).toFixed(1)); currentx += 0.3; games1 = true;
      
      
-     if (bombpos.includes(index)) { document.getElementById('game_play1sstatus').innerText = 'Увы!';document.getElementById('dopoloska').classList.remove('fadee1ing')
-         console.log('clickedbomb ' + Math.floor(Math.random() * (5 - 1)));document.getElementById('minusbutton').classList.remove('disabled_play1'); document.getElementById('plus1button').classList.remove('disabled_play1')
+     if (bombpos.includes(index)) { document.getElementById('game_play1sstatus').innerText = 'Увы!';document.getElementById('with1draw1').classList.remove('fade1test1');
+         document.getElementById('minusbutton').classList.remove('disabled_play1'); document.getElementById('plus1button').classList.remove('disabled_play1')
             for (let i = 0; i < document.querySelectorAll('.yacheyka_play1').length; i++) { document.querySelectorAll('.yacheyka_play1')[i].onclick = ''
               
               
@@ -22,9 +22,9 @@ function openyacheika(index) {
                     document.querySelectorAll('.yacheyka_play1')[i].classList.add('transitiondisable_play1');
                      setTimeout(() => {
                     
-                         document.querySelectorAll('.yacheyka_play1')[i].classList.remove('transitiondisable_play1');
+                         document.querySelectorAll('.yacheyka_play1')[i].classList.remove('transitiondisable_play1');document.querySelectorAll('.yacheyka_play1')[i].classList.remove('transitionenable1_play1');document.querySelectorAll('.yacheyka_play1')[i].onclick = function() {startgame(i + 1)};document.getElementById('with1draw1').classList.add('fadee1ing');document.getElementById('dopoloska').classList.add('fade1test1');
                          
-                }, 1200);setTimeout(() => {document.querySelectorAll('.yacheyka_play1')[i].innerText = '✖'; document.querySelectorAll('.yacheyka_play1')[i].classList.add('clickednotcorrectly_play1');}, 600);document.querySelectorAll('.yacheyka_play1')[i].classList.remove('transitionenable1_play1');document.querySelectorAll('.yacheyka_play1')[i].onclick = function() {startgame(i + 1)};} else {
+                }, 1200);setTimeout(() => {document.querySelectorAll('.yacheyka_play1')[i].innerText = '✖'; document.querySelectorAll('.yacheyka_play1')[i].classList.add('clickednotcorrectly_play1');}, 600);setTimeout(() => {isGameActive = false; document.getElementById('dopoloska').classList.remove('hidden');}, 2000)}  else {
                     
                          document.querySelectorAll('.yacheyka_play1')[i].classList.add('transitiondisable_play1');
                      setTimeout(() => {
@@ -52,7 +52,7 @@ function openyacheika(index) {
                 }}    
      } else {
          
-         console.log("unclicked");
+         
 
             {
                     
@@ -132,7 +132,7 @@ function changepage(index){
         </div>`;break;
         case 3: { document.getElementById('toeditcontainer').innerHTML = `<div class='bonuscontainer_play1'><span style='text-align: start; font-size: 25px'>Mines</span> <div class='bannerbalance_play1'><span style='text-align: center; font-size: 20px'>100 coin</span></div></div>
         
-        <div class='centralcontainer_play1'><div class='game_play1container'><div class='yacheyka_play1' onclick='startgame(1)'>?</div><div class='yacheyka_play1' onclick='startgame(2)'>?</div><div class='yacheyka_play1' onclick='startgame(3)'>?</div><div class='yacheyka_play1' onclick='startgame(4)'>?</div><div class='yacheyka_play1' onclick='startgame(5)'>?</div><div class='yacheyka_play1' onclick='startgame(6)'>?</div><div class='yacheyka_play1' onclick='startgame(7)'>?</div><div class='yacheyka_play1' onclick='startgame(8)'>?</div><div class='yacheyka_play1' onclick='startgame(9)'>?</div><div class='yacheyka_play1' onclick='startgame(10)'>?</div><div class='yacheyka_play1' onclick='startgame(11)'>?</div><div class='yacheyka_play1' onclick='startgame(12)'>?</div><div class='yacheyka_play1' onclick='startgame(13)'>?</div><div class='yacheyka_play1' onclick='startgame(14)'>?</div><div class='yacheyka_play1' onclick='startgame(15)'>?</div><div class='yacheyka_play1' onclick='startgame(16)'>?</div><div class='yacheyka_play1' onclick='startgame(17)'>?</div><div class='yacheyka_play1' onclick='startgame(18)'>?</div><div class='yacheyka_play1' onclick='startgame(19)'>?</div><div class='yacheyka_play1' onclick='startgame(20)'>?</div><div class='yacheyka_play1' onclick='startgame(21)'>?</div><div class='yacheyka_play1' onclick='startgame(22)'>?</div><div class='yacheyka_play1' onclick='startgame(23)'>?</div><div class='yacheyka_play1' onclick='startgame(24)'>?</div><div class='yacheyka_play1' onclick='startgame(25)'>?</div></div></div><div class='centralcontainer_play1'> <div class='startgame_play1'><span style='text-align: center' id='game_play1sstatus'>Ожидание...</span> </div></div><div class='centralcontainer_play1'><div class='startgame_play1' style='height: 50px; align-content: flex-start; justify-content: space-between; padding: 5px'><div><span style='font-size: 20px'>Количество мин:</span><span style='font-size: 20px; margin-left: 2%' id='countmines'>3</span></div><div style='display: flex; align-items: center; gap: 5px; margin: 10px'><span class='clickedcorrectly_play1' style='height: 50px; width: 50px; border-radius: 10px; justify-content: center; align-content: center; font-size: 30px' onclick='changebombcount("1")' id='plus1button'>+</span><span class='clickednotcorrectly_play1 disabled_play1' style='height: 50px; width: 50px; border-radius: 10px; text-align: center; align-content: center; justify-content: center; font-size: 30px;' onclick='changebombcount("0")' id='minusbutton'>-</span> </div></div></div>`}; break;
+        <div class='centralcontainer_play1'><div class='game_play1container'><div class='yacheyka_play1' onclick='startgame(1)'>?</div><div class='yacheyka_play1' onclick='startgame(2)'>?</div><div class='yacheyka_play1' onclick='startgame(3)'>?</div><div class='yacheyka_play1' onclick='startgame(4)'>?</div><div class='yacheyka_play1' onclick='startgame(5)'>?</div><div class='yacheyka_play1' onclick='startgame(6)'>?</div><div class='yacheyka_play1' onclick='startgame(7)'>?</div><div class='yacheyka_play1' onclick='startgame(8)'>?</div><div class='yacheyka_play1' onclick='startgame(9)'>?</div><div class='yacheyka_play1' onclick='startgame(10)'>?</div><div class='yacheyka_play1' onclick='startgame(11)'>?</div><div class='yacheyka_play1' onclick='startgame(12)'>?</div><div class='yacheyka_play1' onclick='startgame(13)'>?</div><div class='yacheyka_play1' onclick='startgame(14)'>?</div><div class='yacheyka_play1' onclick='startgame(15)'>?</div><div class='yacheyka_play1' onclick='startgame(16)'>?</div><div class='yacheyka_play1' onclick='startgame(17)'>?</div><div class='yacheyka_play1' onclick='startgame(18)'>?</div><div class='yacheyka_play1' onclick='startgame(19)'>?</div><div class='yacheyka_play1' onclick='startgame(20)'>?</div><div class='yacheyka_play1' onclick='startgame(21)'>?</div><div class='yacheyka_play1' onclick='startgame(22)'>?</div><div class='yacheyka_play1' onclick='startgame(23)'>?</div><div class='yacheyka_play1' onclick='startgame(24)'>?</div><div class='yacheyka_play1' onclick='startgame(25)'>?</div></div></div><div class='centralcontainer_play1'> <div class='startgame_play1'><span style='text-align: center' id='game_play1sstatus'>Ожидание...</span> </div></div><div class='centralcontainer_play1'><div class='startgame_play1' style='height: 50px; align-content: flex-start; justify-content: space-between; padding: 5px'><div><span style='font-size: 20px'>Количество мин:</span><span style='font-size: 20px; margin-left: 2%' id='countmines'>3</span></div><div style='display: flex; align-items: center; gap: 5px; margin: 10px'><span class='clickedcorrectly_play1' style='height: 50px; width: 50px; border-radius: 10px; justify-content: center; align-content: center; font-size: 30px' onclick='changebombcount("1")' id='plus1button'>+</span><span class='clickednotcorrectly_play1 disabled_play1' style='height: 50px; width: 50px; border-radius: 10px; text-align: center; align-content: center; justify-content: center; font-size: 30px;' onclick='changebombcount("0")' id='minusbutton'>-</span> </div></div></div> <div class='downpoloska_index hidden' id='with1draw1'><div class='buttonwithdraw'>Забрать</div></div>`}; break;
     }
     
 }
@@ -169,14 +169,14 @@ function getRandomNumbers(count, min, max) {
 }
 
 function startgame(index) {
-    document.getElementById('dopoloska').classList.add('fadee1ing');const yacheyki = document.querySelectorAll('.yacheyka_play1');document.getElementById('minusbutton').classList.add('disabled');document.getElementById('plus1button').classList.add('disabled');document.getElementById('plus1button').onclick = '';document.getElementById('minusbutton').onclick = '';
+    if (isGameActive) return;document.getElementById('dopoloska').classList.remove('fade1test1', 'hidden');isGameActive = true;;document.getElementById('dopoloska').classList.add('fadee1ing');const yacheyki = document.querySelectorAll('.yacheyka_play1');document.getElementById('minusbutton').classList.add('disabled');document.getElementById('plus1button').classList.add('disabled');document.getElementById('plus1button').onclick = '';document.getElementById('minusbutton').onclick = ''; setTimeout(() => {document.getElementById('dopoloska').classList.remove('fadee1ing');document.getElementById('dopoloska').classList.add('hidden');}, 1201);
     for (let i = 0; i < yacheyki.length; i++) {
         
         if (games1) {
     yacheyki[i].classList.remove('clickedcorrectly_play1', 'clickednotcorrectly_play1', 'transitionenable1_play1');yacheyki[i].classList.add('transitiondisable_play1');
             
     setTimeout(() => {
-        yacheyki[i].classList.remove('transitiondisable_play1');
+        yacheyki[i].classList.remove('transitiondisable_play1');document.getElementById('with1draw1').classList.add('fade1test1');
         
           
         
@@ -199,10 +199,10 @@ function startgame(index) {
     setTimeout(() => {
         
         updateYacheyka(i, yacheyki, index);
-    }, 600);
+    }, 600); setTimeout(() => (document.getElementById('with1draw1')?.classList.remove('fadee1ing')), 1201);
 } else {
     
-    updateYacheyka(i, yacheyki)}};
+    updateYacheyka(i, yacheyki);document.getElementById('with1draw1').classList.remove('hidden');document.getElementById('with1draw1').classList.add('fade1test1');}};
     bombpos = getRandomNumbers(countmines, 1, 25); openyacheika(index.toString())}
 function updateYacheyka(i, yacheyki, index) {
     if (i != index - 1) {
