@@ -1,0 +1,264 @@
+
+        body {
+            margin: 0;
+            
+            
+            font-family: 'cho';
+            background-color: white;
+            
+            
+            
+            
+            
+            
+            
+            
+        } @font-face{font-family: 'cho';src: url('style.otf')}
+        .downpoloska_index {
+            position: fixed; 
+            bottom: 0;left: 50%;   
+            
+            transform: translateX(-50%);
+            width: 100%; max-width: 500px;
+            height: 90px; overflow-y: hidden;
+            
+            background: rgba(256, 256, 256, 0);
+            display: flex;
+            
+            align-items: center;
+            text-align: center;
+            
+            border-radius: 30px;
+            justify-content: center; z-index: 100;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        .containerlowpanel_index {
+            display: flex;
+            
+            flex-direction: row; 
+            margin: 0px;
+            min-width: 90%;
+            
+            min-height: 70%; background: rgba(256, 256, 256, 1);border-radius: 20px;box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+        .buttonclass {
+            color: black;
+            cursor: pointer;
+            
+            
+            
+            
+            
+            
+            user-select: none;
+            background-color: transparent; /*#1d79db*/
+            flex: 1; 
+            margin: 0px; 
+            
+            font-size: 10px;
+            text-align: center;
+            
+            
+            border-radius: 10px;display: flex;flex-direction: column;align-content: center;align-items: center;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }.logopanel_index{max-width: 70%;border-radius: 20px}.choisedpage_index{color: black; cursor: pointer; background-color: #0590ed; flex: 1; margin: 0px; font-size: 15px; text-align: center; border-radius: 10px; display: flex; flex-direction: column; align-content: center; align-items: center} /*background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%)*/
+        .contentcontainer_index{
+            bottom: 0;
+        left: 0; 
+        margin: 0px;
+        overflow-y: scroll;
+        background-color: transparent;
+            
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        }.contentcontainer_index1
+        {bottom: 0;
+            left: 0; margin: 10px;margin-top: 20px;max-width: 700px;
+            
+            width: 100%; 
+            height: 90%;gap: 2%;
+            overflow-y: hidden;
+            background: rgba(256, 256, 256, 0.9);
+            display: flex;
+            
+            ;text-align: center;
+            justify-content: flex-start; flex-direction: column; 
+            border-radius: 20px
+        }.bannerbalance{background: linear-gradient(to right, #0575e6, #021b79); min-height: 60px; text-align: start; width: 100%; border-radius: 20px; padding: 20px;box-sizing: border-box;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); color: white;}.game_indexs{font-size: 20; margin-top 10px; text-align: start}.game_indexs-wrapper{margin-top 5px; overflow-y: scroll; width: 100%; height: 15%}.game_indexs-container{display: flex; gap: 5px; width: max-content}.game_indexs-item{background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);align-items: start; border-radius: 10px; display: flex; height: 90px; justify-content: center; overflow: hidden; padding: 5px; position: relative; width: 90px;background-size:200% 200%; animation: gradientcolor 6s linear infinite;}.game_indexs-title{color: white; font-size: 20px; line-height: 16px;}.game_indexs-img{left: 50%; position: absolute; top: 70%; transform: translate(-50%, -50%); width: 0px}.buttonclass svg {width: 30px; height: 30px; margin-top: 20%}.textdown_index{text-align: end}@keyframes gradientcolor { 0% {background-position: 0% 50%} 50%{background-position: 100% 50%;}100% {background-position: 0% 50%}}.bannerbonus{background: linear-gradient(to right, #8e2de2, #4a00e0);border-radius: 20px;min-height: 30px;display: flex;flex-direction: column;}.buttonbonus{color: black;background: white; border-radius: 20px;padding: 3px }.bonuscontainer{display: flex;flex-direction: row;text-align: start;padding: 20px;box-sizing: border-box; color: white;justify-content: space-between;background-color: transparent; border-radius: 20px}.game_index-img1{bottom: 0; height: 79px;position: absolute;right: 0}
+        
+    
+        body {
+            margin: 0;
+            
+            
+            font-family: 'cho';
+            background-color: white;overflow-y: scroll;
+            
+            
+            
+            
+            
+            
+            
+            
+        }@font-face{font-family: 'cho';src: url('style.otf_play1')}
+        .downpoloska_play1 {
+            position: fixed; 
+            bottom: 0;left: 50%;   
+            
+            transform: translateX(-50%);
+            width: 100%; max-width: 500px;
+            height: 100px; overflow-y: hidden;
+            
+            background: rgba(256, 256, 256, 0.9);
+            display: flex;
+            
+            align-items: center;
+            text-align: center;
+            
+            border-radius: 10px;
+            justify-content: center; 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        .containerlowpanel_play1 {
+            display: flex;
+            
+            flex-direction: row; 
+            margin: 0px;
+            min-width: 90%;
+            
+            min-height: 90%; background: rgba(100, 100, 100, 0.1);border-radius: 20px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .buttonclass_play1 {
+            color: black;
+            cursor: pointer;
+            
+            
+            
+            
+            
+            
+            user-select: none;
+            background-color: transparent; /*#1d79db*/
+            flex: 1; 
+            margin: 0px; 
+            
+            font-size: 14px;
+            text-align: center;
+            
+            
+            border-radius: 10px;display: flex;flex-direction: column;align-content: center;align-items: center;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        }.logopanel_play1{max-width: 70%;border-radius: 20px}.choisedpage_play1{color: black; cursor: pointer; background-color: #0590ed; flex: 1; margin: 0px; font-size: 15px; text-align: center; border-radius: 10px; display: flex; flex-direction: column; align-content: center; align-items: center} /*background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%)*/
+        .contentcontainer_play1{
+            bottom: 0;
+        left: 0; 
+        margin: 0px;
+        width: 100%; 
+        height: 90vh;
+        overflow-y: scroll;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        }.contentcontainer_play11
+        {bottom: 0;
+            left: 0; margin: 10px;margin-top: 20px;max-width: 700px;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            width: 100%; 
+            height: 90%;gap: 2%;
+            overflow-y: scroll;
+            background: rgba(256, 256, 256, 0.9);
+            
+            display: flex; 
+            ;text-align: center;
+            justify-content: flex-start; flex-direction: column; 
+           
+        }.bannerbalance_play1{background: linear-gradient(to right, #0575e6, #021b79);display: flex; color: white;padding: 1px; border-radius: 10px; height: 50px; width: 100px; justify-content: center; align-content: center;align-items: center; text-align: center}.game_play1s{font-size: 20; margin-top 10px; text-align: start}.game_play1s-wrapper{margin-top 5px; overflow-y: scroll; width: 100%}.game_play1s-container{display: flex; gap: 30px; width: max-content}.game_play1s-item{background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);align-items: start; border-radius: 10px; display: flex; height: 90px;text-align: start; justify-content: center; overflow: hidden; padding: 5px; position: relative; width: max-content;background-size:200% 200%; animation: gradientcolor 6s linear infinite;}.game_play1s-title{color: white; font-size: 50px; line-height: 50px;margin-right: 160px}.game_play1s-img{left: 50%; position: absolute; top: 70%; transform: translate(-50%, -50%); width: 0px}.buttonclass_play1 svg {width: 30px; height: 30px; margin-top: 20%}.textdown_play1{text-align: end}@keyframes gradientcolor { 0% {background-position: 0% 50%} 50%{background-position: 100% 50%;}100% {background-position: 0% 50%}}.bannerbonus_play1{background: linear-gradient(to right, #8e2de2, #4a00e0);border-radius: 20px;min-height: 30px;display: flex;flex-direction: column;}.buttonbonus_play1{color: black;background: white; border-radius: 20px;height: 20px;padding: 3px }.bonuscontainer_play1{display: flex;flex-direction: row;text-align: start;padding: 20px;box-sizing: border-box; color: black;justify-content: space-between; border-radius: 20px}.bannerquests_play1{background: linear-gradient(to right, #36d1dc, #5b86e5);border-radius: 20px;min-height: 30px;display: flex;flex-direction: column;}.buttoncontainer1_play1{display: flex;flex-direction: column;}.totalquestscontainer_play1{height: 500px; width: 100%; overflow-y: scroll;gap: 20px; display: flex; flex-direction: column}.game_play1-img1{bottom: 0; height: 79px;position: absolute;right: 0}.game_play1container{display: grid;grid-template-columns: repeat(5, 70px);grid-template-rows: repeat(5, 70px); width: max-content;height: max-content; overflow: hidden; gap: 2px}.yacheyka_play1{color: white; text-align: center;font-size: 53px;border-radius: 10px;width: 70px; height: 70px; background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);background-size:200% 200%; animation: gradientcolor 2s linear infinite;}.centralcontainer_play1{display: flex;margin-top: 20px; justify-content: center; align-content: center; align-items: center} .clickedcorrectly_play1 {background: linear-gradient(to right, #348f50, #56b4d3);background-size:200% 200%; animation: gradientcolor 2s linear infinite;}.clickednotcorrectly_play1 {background: linear-gradient(to right, #eb3349, #f45c43);background-size:200% 200%; animation: gradientcolor 3s linear infinite;}.startgame_play1{width: 90%; background: linear-gradient(100.15deg,#0062ff 3.2%,#5797ff 63.17%);background-size:200% 200%; animation: gradientcolor 2s linear infinite; border-radius: 30px; height: 30px; color: white; text-align: center; display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: center}.transitiondisable_play1 {animation: transitions 1.2s linear}@keyframes transitions {0%{opacity: 1; scale: 1} 50%{opacity: 0; scale: 0.7} 100%{opacity: 1; scale: 1}}.transitionenable1_play1 {animation: transitions1 0.6s linear}@keyframes transitions1 {from{opacity: 0; scale: 0.7} to{opacity: 1; scale: 1}}.disabled_play1 {opacity: 0.5}@keyframes fadeing {0% {transform: translateY(0) translateX(-50%); opacity: 1;}10%{transform: translateY(-10%) translateX(-50%); opacity: 0.5} 20%{transform: translateY(100%) translateX(-50%); opacity: 0}100%{transform:  translateY(100%) translateX(-50%)}}.fadee1ing {animation: fadeing 2s linear forwards}
+
+        
+    .contentcontainer_index:last-child {
+    margin-bottom: 70px; 
+}
