@@ -151,9 +151,16 @@ function changepage(index){ let toedit = '';
                            
                            
                            
-                                         
+      
+    const buttons = document.querySelectorAll('.buttonclass');
+    buttons.forEach(button => {
+    if (button.classList.contains('choisedPg')) {
+        
+        button.classList.remove('choisedPg');
+    }
+});
     document.getElementById('toeditcontainer').classList.add('changepageanimation');
-    setTimeout(() => {document.getElementById('toeditcontainer').innerHTML = toedit}, 300);
+    setTimeout(() => {document.getElementById('toeditcontainer').innerHTML = toedit}, 300);document.querySelectorAll('.buttonclass')[index - 1].classList.add('choisedPg')
     setTimeout(() => {document.getElementById('toeditcontainer').classList.remove('changepageanimation')}, 600)
                            
 }
@@ -221,7 +228,7 @@ function startgame(index) {
     setTimeout(() => {
         
         updateYacheyka(i, yacheyki, index);
-    }, 250); setTimeout(() => (document.getElementById('with1draw1')?.classList.remove('fadee1ing')), 1201);
+    }, 250); setTimeout(() => {document.getElementById('with1draw1')?.classList.remove('fadee1ing')}, 1201);
 } else {
     updateYacheyka(i, yacheyki);document.getElementById('with1draw1').classList.remove('hidden');document.getElementById('with1draw1').classList.add('fade1test1');}};
     bombpos = getRandomNumbers(countmines, 1, 25); openyacheika(index.toString())}
