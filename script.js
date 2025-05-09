@@ -137,7 +137,9 @@ function changepage(index){ let toedit = '';
     </div>`; break;
             
         case 3: toedit = `<div class='bonuscontainer_play1'><span style='text-align: start; font-size: 25px'>Mines</span> <div class='bannerbalance_play1'><span style='text-align: center; font-size: 20px'>100 coin</span></div></div>
-        <div class='centralcontainer_play1'><div class='game_play1container'><div class='yacheyka_play1' onclick='startgame(1)'>?</div><div class='yacheyka_play1' onclick='startgame(2)'>?</div><div class='yacheyka_play1' onclick='startgame(3)'>?</div><div class='yacheyka_play1' onclick='startgame(4)'>?</div><div class='yacheyka_play1' onclick='startgame(5)'>?</div><div class='yacheyka_play1' onclick='startgame(6)'>?</div><div class='yacheyka_play1' onclick='startgame(7)'>?</div><div class='yacheyka_play1' onclick='startgame(8)'>?</div><div class='yacheyka_play1' onclick='startgame(9)'>?</div><div class='yacheyka_play1' onclick='startgame(10)'>?</div><div class='yacheyka_play1' onclick='startgame(11)'>?</div><div class='yacheyka_play1' onclick='startgame(12)'>?</div><div class='yacheyka_play1' onclick='startgame(13)'>?</div><div class='yacheyka_play1' onclick='startgame(14)'>?</div><div class='yacheyka_play1' onclick='startgame(15)'>?</div><div class='yacheyka_play1' onclick='startgame(16)'>?</div><div class='yacheyka_play1' onclick='startgame(17)'>?</div><div class='yacheyka_play1' onclick='startgame(18)'>?</div><div class='yacheyka_play1' onclick='startgame(19)'>?</div><div class='yacheyka_play1' onclick='startgame(20)'>?</div><div class='yacheyka_play1' onclick='startgame(21)'>?</div><div class='yacheyka_play1' onclick='startgame(22)'>?</div><div class='yacheyka_play1' onclick='startgame(23)'>?</div><div class='yacheyka_play1' onclick='startgame(24)'>?</div><div class='yacheyka_play1' onclick='startgame(25)'>?</div></div></div><div class='centralcontainer_play1'> <div class='startgame_play1'><span style='text-align: center' id='game_play1sstatus'>Ожидание...</span> </div></div><div class='centralcontainer_play1'><div class='startgame_play1' style='height: auto; display: flex; flex-direction: column; padding: 5px; gap: 20px'><div style='display: flex; justify-content: space-between; align-items: center;'><div><span style='font-size: 20px'>Количество мин:</span><span style='font-size: 20px; ' id='countmines'>3</span></div><div style='margin-left: 25px'><div style='display: flex; align-items: center; gap: 5px; margin-top: 10px'><span class='clickedcorrectly_play1' style='height: 50px; width: 50px; border-radius: 10px; justify-content: center; align-content: center; font-size: 30px' onclick='changebombcount("1")' id='plus1button'>+</span><span class='clickednotcorrectly_play1 disabled_play1' style='height: 50px; width: 50px; border-radius: 10px; text-align: center; align-content: center; justify-content: center; font-size: 30px;' onclick='changebombcount("0")' id='minusbutton'>-</span></div></div></div><div><div style='display: flex; justify-content: space-between; align-items: flex-start; text-align: start; align-content: flex-start; gap: 10px'><div class='container-input-bet' style='position: relative'><input type="text" class='input-bet' style='background-color: transparent; width: 100%; height: 100%; border: none;text-align: center; font-size: 20px' value='10' oninput="this.value = this.value.replace(/[^0-9]/g, '');"><span style='font-size: 10px; position: absolute; text-align: center; transform: translateX(175%); bottom: -2px'>Ставка</span></div><div class='buttonbonus_play1'>x0.5</div><div class='buttonbonus_play1'>x2</div></div></div></div> <div class='downpoloska_index hidden' id='with1draw1' style='display: none'><div class='buttonwithdraw'>Забрать</div></div>`;break;
+        <div class='centralcontainer_play1'><div class='game_play1container'><div class='yacheyka_play1' onclick='startgame(1)'>?</div><div class='yacheyka_play1' onclick='startgame(2)'>?</div><div class='yacheyka_play1' onclick='startgame(3)'>?</div><div class='yacheyka_play1' onclick='startgame(4)'>?</div><div class='yacheyka_play1' onclick='startgame(5)'>?</div><div class='yacheyka_play1' onclick='startgame(6)'>?</div><div class='yacheyka_play1' onclick='startgame(7)'>?</div><div class='yacheyka_play1' onclick='startgame(8)'>?</div><div class='yacheyka_play1' onclick='startgame(9)'>?</div><div class='yacheyka_play1' onclick='startgame(10)'>?</div><div class='yacheyka_play1' onclick='startgame(11)'>?</div><div class='yacheyka_play1' onclick='startgame(12)'>?</div><div class='yacheyka_play1' onclick='startgame(13)'>?</div><div class='yacheyka_play1' onclick='startgame(14)'>?</div><div class='yacheyka_play1' onclick='startgame(15)'>?</div><div class='yacheyka_play1' onclick='startgame(16)'>?</div><div class='yacheyka_play1' onclick='startgame(17)'>?</div><div class='yacheyka_play1' onclick='startgame(18)'>?</div><div class='yacheyka_play1' onclick='startgame(19)'>?</div><div class='yacheyka_play1' onclick='startgame(20)'>?</div><div class='yacheyka_play1' onclick='startgame(21)'>?</div><div class='yacheyka_play1' onclick='startgame(22)'>?</div><div class='yacheyka_play1' onclick='startgame(23)'>?</div><div class='yacheyka_play1' onclick='startgame(24)'>?</div><div class='yacheyka_play1' onclick='startgame(25)'>?</div></div></div><div class='centralcontainer_play1'> <div class='startgame_play1'><span style='text-align: center' id='game_play1sstatus'>Ожидание...</span> </div></div><div class='centralcontainer_play1'><div class='startgame_play1' style='height: auto; display: flex; flex-direction: column; padding: 5px; gap: 20px'><div style='display: flex; justify-content: space-between; align-items: center;'><div><span style='font-size: 20px'>Количество мин:</span><span style='font-size: 20px; ' id='countmines'>3</span></div><div style='margin-left: 25px'><div style='display: flex; align-items: center; gap: 5px; margin-top: 10px'><span class='clickedcorrectly_play1' style='height: 50px; width: 50px; border-radius: 10px; justify-content: center; align-content: center; font-size: 30px' onclick='changebombcount("1")' id='plus1button'>+</span><span class='clickednotcorrectly_play1 disabled_play1' style='height: 50px; width: 50px; border-radius: 10px; text-align: center; align-content: center; justify-content: center; font-size: 30px;' onclick='changebombcount("0")' id='minusbutton'>-</span></div></div></div><div><div style='display: flex; justify-content: space-between; align-items: flex-start; text-align: start; align-content: flex-start; gap: 10px'><div class='container-input-bet' style='position: relative'><input type="text" class='input-bet'  value='10' oninput="this.value = this.value.replace(/[^0-9]/g, '');"><span style='font-size: 10px; position: absolute; text-align: center; transform: translateX(175%); bottom: -2px'>Ставка</span></div><div class='buttonbonus_play1'>x0.5</div><div class='buttonbonus_play1'>x2</div></div></div></div> <div class='downpoloska_index hidden' id='with1draw1' style='display: none'><div class='buttonwithdraw'>Забрать</div></div>`;break;
+        case 5: toedit = `<div class='banner_invite_friends'><div><span>Вы заработали:</span> <span id='countcoinfrominvitefriends'>100</span> <span>coin за приглашения</span></div> <div style="width: 100%; height: 2px; background: white; border-radius: 26px; margin-top: 5px;"></div><div style='margin-top: 20px; font-size: 16px'>Ваша уникальная ссылка для приглашения: </div>     <div style='display: flex; flex-direction: row; gap: 10px; margin-top: 5px'><div class='container-input-bet' style='width: 90%; margin-bottom: 10px; flex-direction: row;'><span class="fixed-url">start=</span><input id='input_link' type="text" class='input-bet' value='MD5HASHED' placeholder='желаемая ссылка'></div><div class='buttonbonus_play1' style='font-size: 16px'>Применить</div></div><div style='display: flex; flex-direction: row; gap: 10px; margin-bottom: 20px; margin-top: 10px'><div class='buttonbonus_play1' style='font-size: 16px'>Пригласить</div><div class='buttonbonus_play1' style='font-size: 16px' onclick='copy()'>Скопировать ссылку</div></div></div><span style='margin-top: 20px;'>Список друзей</span><div class='game_indexs-wrapper' style='flex-direction: column;height: auto; width: 90%; overflow-y: scroll; gap: 20px; margin-top: 20px'><div class='game_indexs-container' style='flex-direction: column;height: auto; width: 90%; overflow-y: scroll; gap: 10px'>
+        <div class='invited-friend'><img src='logo.jpg' class='imgfriend'><span style='font-size: 16px'>Shlepa</span></div><div class='invited-friend'><img src='logo.jpg' class='imgfriend'><span style='font-size: 16px'>Shlepa</span></div></div></div>`
     }
                            
                            
@@ -145,13 +147,7 @@ function changepage(index){ let toedit = '';
                            
                            
                            
-                           
-                           
-                           
-                           
-                           
-                           
-      
+                                        
     const buttons = document.querySelectorAll('.buttonclass');
     buttons.forEach(button => {
     if (button.classList.contains('choisedPg')) {
@@ -205,42 +201,53 @@ function startgame(index) {
     yacheyki[i].classList.remove('clickedcorrectly_play1', 'clickednotcorrectly_play1', 'transitionenable1_play1');yacheyki[i].classList.add('transitiondisable_play1');
             
     setTimeout(() => {
+        
         yacheyki[i].classList.remove('transitiondisable_play1');document.getElementById('with1draw1').classList.add('fade1test1');
-        
-          
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }, 500);
     setTimeout(() => {
+        
+        
+        
+        
+        
+        
+        
+        
         
         updateYacheyka(i, yacheyki, index);
     }, 250); setTimeout(() => {document.getElementById('with1draw1')?.classList.remove('fadee1ing')}, 1201);
 } else {
+    
     updateYacheyka(i, yacheyki);document.getElementById('with1draw1').classList.remove('hidden');document.getElementById('with1draw1').classList.add('fade1test1');}};
-    bombpos = getRandomNumbers(countmines, 1, 25); openyacheika(index.toString())}
-                               
+    bombpos = getRandomNumbers(countmines, 1, 25); openyacheika(index.toString())}                    
 function updateYacheyka(i, yacheyki, index) {
+    
     if (i != index - 1) {
     yacheyki[i].innerText = '?';
                                
     yacheyki[i].classList.remove('clickedcorrectly_play1', 'clickednotcorrectly_play1', 'transitionenable1_play1');
-    
     yacheyki[i].onclick = function() {
+    
         openyacheika((i + 1).toString());
     };};
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+function copy() {
+  let copyText = document.getElementById("input_link").value;
+    
+  let textToCopy = 'https://t.me/botnickname?start=' + copyText;
+  navigator.clipboard.writeText(textToCopy) 
 }
