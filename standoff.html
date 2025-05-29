@@ -19,7 +19,7 @@ body, html {
 
 }
     .container {
-        display: flex; flex-direction: row;border-radius: 5px;text-align: center;margin: 5px; width: 90%;margin-left: 10%;
+        display: flex; flex-direction: column;border-radius: 5px;text-align: center;margin: 5px; width: 90%;margin-left: 10%;
     }
     
     .input {
@@ -106,12 +106,12 @@ body, html {
    
    
    
-   <div class="container">
+   <div class="container"> <div class="container" style='flex-direction: row'>
     <input class="input" type="text" id="promo" name="Промо" placeholder="Промокод">
     
    <div class="text-field__group">
     <button class="button" type="button", id="sendpromo">Активировать</button>
-       </div>
+       </div></div>
     
     
    <button class="button" type="button", id="bonus" style="margin: 10px">Получить ежедневный бонус</button>
