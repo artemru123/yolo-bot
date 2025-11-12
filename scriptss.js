@@ -17,7 +17,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 
 
-
+function get_ss(){
 const balance = parseFloat(urlParams.get('bal'));
 if (1 > 2) {
     console.error('Некорректный баланс');
@@ -89,5 +89,4 @@ if (1 > 2) {
         
         
         });
-}
-console.log(datas, balance)
+}}
