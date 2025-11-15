@@ -898,7 +898,7 @@
 
 
 
-.container-skuns{width: 100%; height: auto; overflow-y: scroll; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;}
+.container-skuns{width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;}
 .container-skunss{width: calc(50% - 20px);; ;height: 130px; background: #2F2F2F; border-radius: 30px; justify-content: center; align-content: center;align-items: center; cursor: pointer}
 .skuns{height: 90px;position: absolute}
 
@@ -907,7 +907,7 @@
 
 
 
-.button_confurms{width: 60%; height: 20%; text-align: center; background: linear-gradient(#FDC830 38%,  #F37335 100%); align-content: center; align-self: center; border-radius: 10px;justify-content: center; cursor: pointer;display: flex;  align-items: center; }
+.button_confurms{width: 60%; height: 20%; text-align: center; background: linear-gradient(#FDC830 38%,  #F37335 100%); align-content: center; align-self: center; border-radius: 10px;justify-content: center; cursor: pointer;display: flex;  align-items: center; margin-bottom: 20px}
 
 
 
