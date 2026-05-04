@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/bot:token/:path*",
-      "destination": "https://telegram.org*"
+      "destination": "https://apI.telegram.org*"
     }
   ]
 }
